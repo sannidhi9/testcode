@@ -11,25 +11,32 @@ Output: 5*/
 using namespace std;
 
 
-int last_word(string str)
+int last_word(string str,int e)
 {
     int len = str.length();
-    int i = len-1;
+    int i = len-1-e;
     while (i >= 0 && str[i] != ' ')
     {
         i--;
     }
-    return len-i-1;
+    return len-i-1-e;
 }
 
 int main()
 {
     string str;
-    int n;
+    int n,e=0;
     cout << "Enter string : ";
     getline(cin, str);
-    n=last_word(str);
+        for(int j=str.length()-1;j>=0;j--)
+    {
+        if(str[j]==' ')
+        e++;
+        else
+            break;
+    }
+    n=last_word(str,e);
     cout << "Last word size :"<<n;
     return 0;
 }
-//repl.it/@sannidhihabbu/lengthoflastword
+//https://repl.it/@sannidhihabbu/lengthoflastword
