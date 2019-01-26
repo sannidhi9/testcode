@@ -12,7 +12,7 @@ Output: false
 #include <string>
 #include<ctype.h>
 using namespace std;
-int pallindrome(char str[],int j)
+int palindrome(char str[],int j)
 {
     int p=0;
      for(int i=0;i<j/2;i++)
@@ -42,9 +42,9 @@ for(i=0;i<s.length()+1;i++)
     str[j++]=c;
 
 }
- pallindrome(str,j);
+ palindrome(str,j);
 return 0;
 }
-//https://repl.it/@sannidhihabbu/stringypallindrome-1
+//https://repl.it/@sannidhihabbu/stringypalindrome-1
 
-//https://repl.it/@sannidhihabbu/stringypallindrome-1
+//https://repl.it/@sannidhihabbu/stringypalindrome-1
