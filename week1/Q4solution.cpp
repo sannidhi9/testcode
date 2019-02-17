@@ -19,7 +19,7 @@ rotate 2 steps to the right: [3,99,-1,-100]
 using namespace std;
 int main()
 {
-    int arr[50],len,t,k,i;
+    int arr[50],len,k,i,t[50];
 	cout<<"Enter array size : ";
 	cin>>len;
 	cout<<"Enter array elements : ";
@@ -29,20 +29,23 @@ int main()
 	}
 	cout<<"enter the value of k : ";
 	cin>>k;
-	for(i=0;i<k;i++)
-	{
-	    t=arr[len-1];
-	    for(int j=len-1;j>=0;j--)
-        {
-            arr[j+1]=arr[j];
-        }
-       arr[0]=t;
-	}
+	if(k>len)
+        k=k%len;
+    for(i=len-1;i>=0;i--)
+    {
+            if(i+k>=len)
+                t[i+k-len]=arr[i];
+            else
+                t[i+k]=arr[i];
+
+    }
+
 	cout<<"new array is : ";
 	for(i=0; i<len; i++)
 		{
-			cout<<arr[i]<<" ";
+			cout<<t[i]<<" ";
 		}
-	return 0;
+return 0;
 }
-//https://repl.it/@sannidhihabbu/rightrotate
+
+//https://repl.it/@sannidhihabbu/rightrot
